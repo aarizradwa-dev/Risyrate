@@ -1,0 +1,153 @@
+<meta name='viewport' content='width=device-width, initial-scale=1'/><!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Rate RISYtechs AI</title>
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background: radial-gradient(circle at top, #0a0f18, #020409 70%);
+        font-family: 'Segoe UI', sans-serif;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .card {
+        background: rgba(255, 255, 255, 0.06);
+        backdrop-filter: blur(14px);
+        border: 1px solid rgba(255,255,255,0.15);
+        box-shadow: 0 0 40px rgba(0, 195, 255, 0.3);
+        padding: 30px;
+        border-radius: 18px;
+        width: 90%;
+        max-width: 480px;
+        text-align: center;
+    }
+
+    h2 {
+        font-size: 26px;
+        margin-bottom: 15px;
+        color: #00d9ff;
+        text-shadow: 0 0 8px #0092b8;
+        letter-spacing: 1px;
+    }
+
+    .stars {
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        margin: 20px 0;
+    }
+
+    .star {
+        font-size: 50px;
+        cursor: pointer;
+        color: #3d3d3d;
+        transition: 0.25s ease;
+        text-shadow: 0 0 10px rgba(255,255,255,0.1);
+    }
+
+    .star:hover {
+        transform: scale(1.2);
+        color: #ffd34a;
+        text-shadow: 0 0 20px #ffdf7a;
+    }
+
+    .star.active {
+        color: #ffd34a;
+        text-shadow: 0 0 25px #ffdf7a;
+        transform: scale(1.15);
+    }
+
+    textarea {
+        width: 100%;
+        padding: 12px;
+        border-radius: 10px;
+        border: none;
+        font-size: 15px;
+        resize: vertical;
+        background: rgba(255,255,255,0.15);
+        color: white;
+        outline: none;
+    }
+
+    textarea::placeholder {
+        color: rgba(255,255,255,0.6);
+    }
+
+    button {
+        margin-top: 18px;
+        padding: 12px 22px;
+        font-size: 17px;
+        border: none;
+        border-radius: 10px;
+        background: #00baff;
+        color: white;
+        cursor: pointer;
+        transition: 0.3s;
+        width: 100%;
+        font-weight: 600;
+        letter-spacing: 1px;
+        box-shadow: 0 0 15px rgba(0,186,255,0.5);
+    }
+
+    button:hover {
+        background: #008ecc;
+        box-shadow: 0 0 25px rgba(0,186,255,0.8);
+        transform: translateY(-2px);
+    }
+</style>
+</head>
+
+<body>
+
+<div class="card">
+    <h2>⭐ Rate RISYtechs AI ⭐</h2>
+
+    <form action="https://formsubmit.co/Aarizradwa@gmail.com" method="POST">
+
+        <input type="hidden" id="ratingValue" name="rating" required>
+
+        <div class="stars" id="starContainer">
+            <span class="star" data-value="1">★</span>
+            <span class="star" data-value="2">★</span>
+            <span class="star" data-value="3">★</span>
+            <span class="star" data-value="4">★</span>
+            <span class="star" data-value="5">★</span>
+        </div>
+
+        <textarea name="feedback" placeholder="Tell us what you think about RISYtechs..." required></textarea>
+
+        <button type="submit">Submit Rating</button>
+
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://yourwebsite.com/thankyou.html">
+    </form>
+</div>
+
+<script>
+const stars = document.querySelectorAll(".star");
+const ratingInput = document.getElementById("ratingValue");
+
+stars.forEach(star => {
+    star.addEventListener("click", () => {
+        let rating = star.dataset.value;
+        ratingInput.value = rating;
+
+        stars.forEach(s => {
+            s.classList.remove("active");
+            if (s.dataset.value <= rating) {
+                s.classList.add("active");
+            }
+        });
+    });
+});
+</script>
+
+</body>
+</html>
